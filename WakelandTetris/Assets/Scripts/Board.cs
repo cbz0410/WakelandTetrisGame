@@ -17,7 +17,7 @@ public class Board : MonoBehaviour
     public Vector3Int holdPosition = new Vector3Int(-10, 6, 0);
 
     public int linesCleared = 0;
-    private bool[] levels = new bool[4];
+    private bool[] levels = new bool[3];
 
     public RectInt Bounds {
         get {
@@ -159,13 +159,7 @@ public class Board : MonoBehaviour
             levels[2] = true;
             activePiece.stepDelay -= 0.3f;
             activePiece.quickDropDelay -= 0.01f;
-        } else if(linesCleared == 100) {
-            WinGame();
         }
-    }
-
-    private void WinGame() {
-        SceneManager.LoadScene("WinScreen");
     }
 
     private bool IsLineFull(int row) {
