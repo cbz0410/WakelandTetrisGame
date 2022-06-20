@@ -8,6 +8,6 @@ public class LinesDisplay : MonoBehaviour
     public TMP_Text linesText;
 
     private void Update() {
-        linesText.text = "LINES: " + board.linesCleared + 1000;
+        linesText.text = "LINES: " + board.linesCleared;
     }
 }
