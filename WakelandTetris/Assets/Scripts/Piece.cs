@@ -8,10 +8,10 @@ public class Piece : MonoBehaviour
     public Vector3Int[] cells {get; private set;}
     public int rotationIndex {get; private set;}
 
-    public float stepDelay = 1f;
+    public static float stepDelay = 1f;
     public float lockDelay = 0.3f;
 
-    public float quickDropDelay = 0.05f;
+    public static float quickDropDelay = 0.05f;
     public float holdDelay = 0.08f;
     
     private float quickDropTimer = 0f;
@@ -38,9 +38,25 @@ public class Piece : MonoBehaviour
         }
     }
 
+    private void SetSpeed() {
+        int currentLevel = Board.level;
+
+        if(currentLevel == 1) {
+            stepDelay = 0.5f;
+        } else if(currentLevel == 2) {
+            stepDelay = 0.25f;
+        } else if(currentLevel == 3) {
+            stepDelay = 0.1f;
+            quickDropDelay = 0.05f;
+        } else if(currentLevel == 4) {
+            stepDelay = 0.05f;
+        }
+    }
+
     private void Update() {
         board.Clear(this);
         board.SetLevel();
+        SetSpeed();
 
         lockTime += Time.deltaTime;
 

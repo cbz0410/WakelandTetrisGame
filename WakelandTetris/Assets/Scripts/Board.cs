@@ -17,7 +17,7 @@ public class Board : MonoBehaviour
     public Vector3Int holdPosition = new Vector3Int(-10, 6, 0);
 
     public int linesCleared = 0;
-    private bool[] levels = new bool[3];
+    public static int level = 0;
 
     public RectInt Bounds {
         get {
@@ -149,16 +149,14 @@ public class Board : MonoBehaviour
     }
 
     public void SetLevel() {
-        if(linesCleared == 4 & !levels[0]) {
-            levels[0] = true;
-            activePiece.stepDelay -= 0.3f;
-        } else if(linesCleared == 16 & !levels[1]) {
-            levels[1] = true;
-            activePiece.stepDelay -= 0.3f;
-        } else if(linesCleared == 64 & !levels[2]) {
-            levels[2] = true;
-            activePiece.stepDelay -= 0.3f;
-            activePiece.quickDropDelay -= 0.01f;
+        if(linesCleared == 4 & level == 0) {
+            level++;
+        } else if(linesCleared == 16 & level == 1) {
+            level++;
+        } else if(linesCleared == 64 & level == 2) {
+            level++;
+        } else if(linesCleared == 100 & level == 3) {
+            level++;
         }
     }
 
