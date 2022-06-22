@@ -173,7 +173,6 @@ MonoBehaviour:
   spawnPosition: {x: -1, y: 8, z: 0}
   previewPosition: {x: 9, y: 6, z: 0}
   holdPosition: {x: -10, y: 6, z: 0}
-  linesCleared: 0
 --- !u!156049354 &129787768
 Grid:
   m_ObjectHideFlags: 0
@@ -214,9 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cfe34276634d7244a938e1528043578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDelay: 1
   lockDelay: 0.3
-  quickDropDelay: 0.05
   holdDelay: 0.08
 --- !u!1 &160226136
 GameObject:
@@ -564,7 +561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7179b7b2fd47b24eac24fbc0e946fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  board: {fileID: 129787767}
   linesText: {fileID: 471704238}
 --- !u!114 &471704238
 MonoBehaviour:
@@ -1023,7 +1019,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'QUIT
+  m_text: 'END GAME
 
 '
   m_isRightToLeft: 0
@@ -1829,7 +1825,7 @@ GameObject:
   - component: {fileID: 2058986234}
   - component: {fileID: 2058986233}
   m_Layer: 5
-  m_Name: Quit
+  m_Name: EndGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1902,7 +1898,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1449566263}
         m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -16,7 +16,7 @@ public class Board : MonoBehaviour
     public Vector3Int previewPosition = new Vector3Int(9, 6, 0);
     public Vector3Int holdPosition = new Vector3Int(-10, 6, 0);
 
-    public int linesCleared = 0;
+    public static int linesCleared = 0;
     public static int level = 0;
 
     public RectInt Bounds {
@@ -60,6 +60,7 @@ public class Board : MonoBehaviour
 
     public void Restart() {
         SceneManager.LoadScene("Tetris");
+        linesCleared = 0;
     }
 
     public void SpawnPiece() {
@@ -99,7 +100,7 @@ public class Board : MonoBehaviour
 
     private void GameOver() {
         tilemap.ClearAllTiles();
-        linesCleared = 0;
+        SceneManager.LoadScene("EndScreen");
     }
 
     public void Set(Piece piece) {
