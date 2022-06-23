@@ -150,13 +150,13 @@ public class Board : MonoBehaviour
     }
 
     public void SetLevel() {
-        if(linesCleared == 4 & level == 0) {
+        if(linesCleared >= 4 & level == 0) {
             level++;
-        } else if(linesCleared == 16 & level == 1) {
+        } else if(linesCleared >= 16 & level == 1) {
             level++;
-        } else if(linesCleared == 64 & level == 2) {
+        } else if(linesCleared >= 64 & level == 2) {
             level++;
-        } else if(linesCleared == 100 & level == 3) {
+        } else if(linesCleared >= 100 & level == 3) {
             level++;
         }
     }
