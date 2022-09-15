@@ -27,6 +27,8 @@ public class Board : MonoBehaviour
     }
 
     private void Awake() {
+        level = 0;
+        linesCleared = 0;
         tilemap = GetComponentInChildren<Tilemap>();
         activePiece = GetComponentInChildren<Piece>();
 
