@@ -41,7 +41,9 @@ public class Piece : MonoBehaviour
     private void SetSpeed() {
         int currentLevel = Board.level;
 
-        if(currentLevel == 1) {
+        if(currentLevel == 0) {
+            stepDelay = 1f;
+        } else if(currentLevel == 1) {
             stepDelay = 0.5f;
         } else if(currentLevel == 2) {
             stepDelay = 0.25f;
